@@ -3,24 +3,24 @@ import {
   sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
-// ===============================
+
 // ELEMENTOS
-// ===============================
+
 const emailInput = document.getElementById("emailLogin");
 const senhaInput = document.getElementById("senhaLogin");
 const btnEntrar = document.getElementById("btnEntrar");
 const btnCadastrar = document.getElementById("btnCadastrar");
 
-// ===============================
+
 // IR PARA CADASTRO
-// ===============================
+
 btnCadastrar?.addEventListener("click", () => {
  window.location.href = "../cadastro/index.html";
 });
 
-// ===============================
+
 // LOGIN
-// ===============================
+
 btnEntrar?.addEventListener("click", async () => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
