@@ -10,20 +10,18 @@ const btnCadastrar = document.getElementById("btn-secondary");
 const btnIrLogin = document.getElementById("btn-primary");
 const btnReenviar = document.getElementById("reenviarEmail");
 
-// 🔹 IR PARA LOGIN
+// IR PARA LOGIN
 btnIrLogin?.addEventListener("click", () => {
   window.location.href = "../login/index.html";
 });
 
-// 🔹 CADASTRAR USUÁRIO
+// CADASTRAR USUÁRIO
 btnCadastrar?.addEventListener("click", async () => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
   const confirmar = confirmarInput.value;
   
-
   console.log("clicou cadastrar");
-
 
   if (!email || !senha || !confirmar) {
     alert("Preencha todos os campos.");
