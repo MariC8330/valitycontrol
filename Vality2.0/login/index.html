@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <div class="logo">
+  <span class="logo-main">Vality</span>
+  <span class="logo-sub">CONTROL</span>
+</div>
+
+  <div class="container">
+    <div class="card">
+  <h2>Login</h2>
+
+ <label for="emailLogin">Email</label>
+<input id="emailLogin" type="email" placeholder="seuemail@gmail.com">
+
+<label for="senhaLogin">Senha</label>
+<input id="senhaLogin" type="password" placeholder="********">
+  <a href="#" class="forgot">Esqueceu a senha?</a>
+
+  <button type="button" id="btnEntrar" class="btn-primary">Entrar</button>
+
+
+  <button type="button" id="btnCadastrar" class="btn-secondary">
+    Cadastre-se
+  </button>
+
+
+</div>
+  </div>
+
+<!-- FIREBASE -->
+ <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAuth } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBbDl22bEZchepT4kGUs_YoFD8ul90BogA",
+    authDomain: "valitycontrol.firebaseapp.com",
+    projectId: "valitycontrol",
+    storageBucket: "valitycontrol.firebasestorage.app",
+    messagingSenderId: "100773453070",
+    appId: "1:100773453070:web:5ee9ecf37a12c6a1a6cb5f",
+    measurementId: "G-0QZ0LRZEMS"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // expor global
+  window.firebaseAuth = auth;
+</script>
+
+<script type="module" src="script.js"></script>
+
+
+</body>
+</html>

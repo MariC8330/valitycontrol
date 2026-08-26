@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vality Control</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="menu/style.css">
+
+  
+</head>
+
+<body>
+
+<div id="menuContainer"></div>
+
+<div class="app">
+
+<header class="topbar">
+
+<div class="user-area">
+<div class="avatar"></div>
+
+<div class="logo-text">
+<span class="logo-main">Vality</span>
+<span class="logo-sub">CONTROL</span>
+</div>
+</div>
+
+<div class="search-box">
+<input type="text" id="buscarInput" placeholder="Buscar"/>
+<span class="search-icon">🔍</span>
+</div>
+
+</header>
+
+<main class="content">
+
+<section class="form-card">
+
+<input type="text" id="nomeProduto" placeholder="Nome do produto"/>
+
+<div class="row">
+<input type="text" id="loteProduto" placeholder="Lote"/>
+<input type="date" id="validadeProduto"/>
+</div>
+
+<div class="row">
+<input type="text" id="categoriaProduto" placeholder="Categoria"/>
+<input type="number" id="qtdProduto" placeholder="qtd" min="0"/>
+</div>
+
+<button class="btn-primary" id="btnCadastrar">
+Cadastrar
+</button>
+
+</section>
+
+<section class="filter">
+
+<select id="filtroCategoria">
+<option value="">Categoria</option>
+</select>
+
+<select id="filtroMes">
+<option value="">Mês/Ano</option>
+</select>
+
+<select id="filtroAno">
+<option value="">Ano</option>
+</select>
+
+</section>
+
+<section class="items" id="listaItens"></section>
+
+</main>
+
+</div>
+
+
+<!-- CARREGAR MENU -->
+<script>
+
+fetch("menu/index.html")
+.then(res => res.text())
+.then(html => {
+
+const container = document.getElementById("menuContainer");
+container.innerHTML = html;
+
+const script = document.createElement("script");
+script.src = "menu/script.js";
+script.type = "module";
+
+document.body.appendChild(script);
+
+});
+
+</script>
+
+
+<script type="module" src="function.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HAMBÚRGUER ===== */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3000;
+
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+
+  transition: left 0.3s ease;
+}
+
+/* ===== OVERLAY ===== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  z-index: 2000;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== SIDEBAR ===== */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+
+  background: linear-gradient(180deg, #0a3d91, #0b2f6b);
+  color: white;
+
+  box-shadow: 6px 0 30px rgba(0,0,0,0.35);
+  transition: left 0.3s ease;
+  z-index: 2500;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+/* ===== HEADER ===== */
+.menu-header {
+  padding: 22px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.menu-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ===== SECTION ===== */
+.menu-section {
+  padding: 16px;
+}
+
+#emailUsuario {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* ===== TÍTULO ===== */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+
+  padding: 10px 8px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.section-title:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.arrow {
+  font-size: 14px;
+}
+
+/* ===== COLAPSO ===== */
+.section-content {
+  margin-top: 8px;
+  display: none;
+}
+
+/* ===== LISTA ===== */
+.categoria-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== ITEM ===== */
+.categoria-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 12px;
+  backdrop-filter: blur(6px);
+}
+
+.categoria-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.categoria-nome {
+  font-weight: 600;
+}
+
+.categoria-count {
+  background: #4c1dff;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* ===== AÇÕES ===== */
+.categoria-acoes {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-editar {
+  flex: 1;
+  background: linear-gradient(90deg, #4c1dff, #6d28ff);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-excluir {
+  flex: 1;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* ===== FOOTER ===== */
+.menu-footer {
+  margin-top: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-sair {
+  background: linear-gradient(90deg, #4c1dff, #6d28ff);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-excluir-conta {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 320px;
+  padding: 22px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  text-align: center;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#confirmarExclusao,
+#confirmarExcluirConta {
+  background: #ef4444;
+  color: white;
+}
+
+#cancelarExclusao,
+#cancelarExcluirConta {
+  background: #9ca3af;
+  color: white;
+}
