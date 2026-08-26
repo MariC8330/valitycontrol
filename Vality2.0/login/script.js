@@ -5,7 +5,6 @@ import {
 
 
 // ELEMENTOS
-
 const emailInput = document.getElementById("emailLogin");
 const senhaInput = document.getElementById("senhaLogin");
 const btnEntrar = document.getElementById("btnEntrar");
@@ -13,14 +12,12 @@ const btnCadastrar = document.getElementById("btnCadastrar");
 
 
 // IR PARA CADASTRO
-
 btnCadastrar?.addEventListener("click", () => {
  window.location.href = "../cadastro/index.html";
 });
 
 
 // LOGIN
-
 btnEntrar?.addEventListener("click", async () => {
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
@@ -32,7 +29,6 @@ btnEntrar?.addEventListener("click", async () => {
 
   try {
 
-    // LOGIN
     const userCredential = await signInWithEmailAndPassword(
       window.firebaseAuth,
       email,
@@ -67,7 +63,6 @@ btnEntrar?.addEventListener("click", async () => {
 });
 
 // ESQUECEU A SENHA
-
 document.querySelector(".forgot")?.addEventListener("click", async (event) => {
   event.preventDefault();
 
