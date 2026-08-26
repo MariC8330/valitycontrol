@@ -52,8 +52,7 @@ function iniciarMenu() {
   let categoriasAbertas = false;
 
   
-  // MENU HAMBURGUER
-
+  // MENU BOTAO HAMBURGUER
   function toggleMenu() {
 
     if (!sideMenu) return;
@@ -71,9 +70,7 @@ function iniciarMenu() {
   menuToggle?.addEventListener("click", toggleMenu);
   overlay?.addEventListener("click", toggleMenu);
 
-  // =========================
   // COLAPSAR CATEGORIAS
-  // =========================
   categoriasToggle?.addEventListener("click", () => {
 
     categoriasAbertas = !categoriasAbertas;
@@ -87,11 +84,8 @@ function iniciarMenu() {
     }
 
   });
-
-  // =========================
+  
   // LOGOUT
-  // =========================
-
   btnLogout?.addEventListener("click", async () => {
     try {
 
@@ -105,11 +99,7 @@ function iniciarMenu() {
     }
   });
   
-
-  
 // EXCLUIR
-
-
 btnExcluirConta?.addEventListener("click", async () => {
   const confirmar = confirm(
     "Deseja mesmo excluir a conta? Essa ação não poderá ser desfeita."
@@ -122,8 +112,6 @@ btnExcluirConta?.addEventListener("click", async () => {
 
 
 // FUNÇÃO EXCLUIR CONTA
-
-
 async function excluirConta() {
   try {
     const user = auth.currentUser;
@@ -168,9 +156,7 @@ async function excluirConta() {
   }
 }
 
- 
   // CATEGORIAS
-  
   if (!window.produtos) {
     window.produtos = [];
   }
